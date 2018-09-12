@@ -16,7 +16,7 @@ Layout: <br>
 Planned Components: <br>
 <img src="https://raw.githubusercontent.com/brenderbee/table-practice/master/src/assets/img/planning/components1.JPG" width="800" />
 
-Layout: <br>
+<br>
 <img src="https://raw.githubusercontent.com/brenderbee/table-practice/master/src/assets/img/planning/components2.JPG" width="800" />
 
 ## Setup/Installation Requirement
