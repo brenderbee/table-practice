@@ -10,6 +10,7 @@ function TableHeader(props) {
         <ColumnHeader
           key={index}
           header={header}
+          onClickSort={props.onClickSort}
         />
       )}
     </div>
@@ -17,7 +18,8 @@ function TableHeader(props) {
 }
 
 TableHeader.propTypes = {
-  columnList: PropTypes.array
+  columnList: PropTypes.array,
+  onClickSort: PropTypes.func
 };
 
 export default TableHeader;
