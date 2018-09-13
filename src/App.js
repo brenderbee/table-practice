@@ -9,6 +9,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Table />
+        <p>Icons made by Freepik from www.flaticon.com</p>
       </div>
     );
   }
