@@ -1,21 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import RowCell from './RowCell';
 import './../assets/css/Row.css';
 import PropTypes from 'prop-types';
 
-class Row extends Component {
-  render() {
-    return (
-      <div className="row">
-        {this.props.rowData.map((cell, index) =>
-          <RowCell
-            key={index}
-            cell={cell}
+function Row(props) {
+  return (
+    <div className="row">
+      {props.rowData.map((cell, index) =>
+        <RowCell
+          key={index}
+          cell={cell}
           />
-        )}
-      </div>
-    );
-  }
+      )}
+    </div>
+  );
 }
 
 Row.propTypes = {
