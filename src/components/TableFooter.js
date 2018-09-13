@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import EntriesPerPage from './EntriesPerPage';
 
 class TableFooter extends Component {
   render() {
     return (
       <div>
-        <h2>TableFooter</h2>
+        <EntriesPerPage />
       </div>
     );
   }
