@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import NavNumber from './NavNumber';
 
 class EntriesNav extends Component {
   render() {
     return (
       <div>
-        <p>EntriesNav</p>
+        <NavNumber />
       </div>
     );
   }
