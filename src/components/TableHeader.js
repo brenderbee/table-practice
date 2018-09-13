@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import ColumnHeader from './ColumnHeader';
 
 class TableHeader extends Component {
   render() {
     return (
       <div>
-        <h2>Column Headings</h2>
+        <ColumnHeader />
       </div>
     );
   }
