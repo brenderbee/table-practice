@@ -32,7 +32,7 @@ class Table extends Component {
   }
 
   handleSort(header) {
-    console.log('sort is triggered');
+    console.log('sort is triggered', header);
   }
 
   render() {
