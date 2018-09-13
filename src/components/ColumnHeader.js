@@ -4,16 +4,24 @@ import './../assets/css/ColumnHeader.css';
 import PropTypes from 'prop-types';
 
 function ColumnHeader(props) {
+
+  function handleSendColumnHeader() {
+    props.onClickSort();
+  }
+
   return (
-    <div className="column-header">
+    <div onClick={handleSendColumnHeader} className="column-header">
       <h2>{props.header}</h2>
-      <SortArrow />
+      <SortArrow
+
+      />
     </div>
   );
 }
 
 ColumnHeader.propTypes = {
-  header: PropTypes.string
+  header: PropTypes.string,
+  onClickSort: PropTypes.func
 };
 
 export default ColumnHeader;
