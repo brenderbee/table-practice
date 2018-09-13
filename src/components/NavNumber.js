@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class NavNumber extends Component {
-  render() {
-    return (
-      <div>
-        <p>1</p>
-      </div>
-    );
-  }
+function NavNumber() {
+  return (
+    <div>
+      <p>1</p>
+    </div>
+  );
 }
 
 export default NavNumber;
