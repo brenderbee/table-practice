@@ -12,9 +12,22 @@ class Table extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterRows: rows,
+      masterRows: this.parseData(columns, rows),
       masterColumns: columns
     };
+    this.parseData = this.parseData.bind(this);
+  }
+
+  parseData(columns, rows) {
+    let rowObjects = [];
+    for (let i = 0; i < rows.length; i++) {
+      let row = {};
+      for (let j = columns.length - 1; j > -1; j--) {
+        row[columns[j]] = rows[i][j];
+      }
+      rowObjects.push(row);
+    }
+    return rowObjects;
   }
 
   render() {
