@@ -5,16 +5,14 @@ import PropTypes from 'prop-types';
 
 function ColumnHeader(props) {
 
-  function handleSendColumnHeader() {
-    props.onClickSort();
+  function handleSendColumnHeader(header) {
+    props.onClickSort(header);
   }
 
   return (
-    <div onClick={handleSendColumnHeader} className="column-header">
+    <div onClick={() => handleSendColumnHeader(props.header)} className="column-header">
       <h2>{props.header}</h2>
-      <SortArrow
-
-      />
+      <SortArrow />
     </div>
   );
 }
