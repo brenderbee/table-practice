@@ -1,7 +1,11 @@
 .column-header {
-  border: 1px solid black;
+  border-right: 1px solid black;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.column-header:last-child {
+  border-right: none;
 }
