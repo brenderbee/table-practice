@@ -15,7 +15,7 @@ class ColumnHeader extends Component {
 }
 
 ColumnHeader.propTypes = {
-  header: PropTypes.array
+  header: PropTypes.string
 };
 
 export default ColumnHeader;
