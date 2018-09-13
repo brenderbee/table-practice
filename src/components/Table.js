@@ -9,9 +9,16 @@ const rows = jsonResponse.data;
 const columns = jsonResponse.columns;
 
 class Table extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterRows: rows
+    };
+  }
+
   render() {
     return (
-      <div class="table">
+      <div className="table">
         <TableHeader />
         <RowList />
         <TableFooter />
