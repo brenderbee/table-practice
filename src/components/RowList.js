@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Row from './Row';
 
 class RowList extends Component {
   render() {
     return (
       <div>
-        <p>RowList</p>
+        <Row />
       </div>
     );
   }
