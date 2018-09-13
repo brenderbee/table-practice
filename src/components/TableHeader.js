@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ColumnHeader from './ColumnHeader';
 import './../assets/css/TableHeader.css';
 import PropTypes from 'prop-types';
