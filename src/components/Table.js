@@ -38,6 +38,7 @@ class Table extends Component {
         />
         <RowList
           rowList={this.state.masterRows}
+          columnList={this.state.masterColumns}
         />
         <TableFooter />
       </div>
