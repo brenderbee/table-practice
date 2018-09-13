@@ -5,14 +5,14 @@ class Row extends Component {
   render() {
     return (
       <div>
-        {this.props.item[1]}
+        {this.props.rowData[1]}
       </div>
     );
   }
 }
 
 Row.propTypes = {
-  item: PropTypes.array
+  rowData: PropTypes.array
 };
 
 export default Row;

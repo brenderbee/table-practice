@@ -6,10 +6,10 @@ class RowList extends Component {
   render() {
     return (
       <div>
-        {this.props.rowList.map((item, index) =>
+        {this.props.rowList.map((rowData, index) =>
           <Row
             key={index}
-            item={item}
+            rowData={rowData}
           />
         )}
       </div>
