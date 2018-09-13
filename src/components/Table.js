@@ -20,7 +20,9 @@ class Table extends Component {
     return (
       <div className="table">
         <TableHeader />
-        <RowList />
+        <RowList
+          rowList={this.state.masterRows}
+        />
         <TableFooter />
       </div>
     );
