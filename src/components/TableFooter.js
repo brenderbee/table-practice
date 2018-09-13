@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import EntriesPerPage from './EntriesPerPage';
 import EntriesNav from './EntriesNav';
 
-class TableFooter extends Component {
-  render() {
-    return (
-      <div>
-        <EntriesPerPage />
-        <EntriesNav />
-      </div>
-    );
-  }
+function TableFooter(props) {
+  return (
+    <div>
+      <EntriesPerPage />
+      <EntriesNav />
+    </div>
+  );
 }
 
 export default TableFooter;
