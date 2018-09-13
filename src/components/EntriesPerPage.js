@@ -1,8 +1,9 @@
 import React from 'react';
+import './../assets/css/EntriesPerPage.css';
 
 function EntriesPerPage() {
   return (
-    <div>
+    <div className="entries-per-page">
       <p>entries per page</p>
       <select>
         <option value="All">All</option>

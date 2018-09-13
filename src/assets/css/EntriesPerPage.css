@@ -1,0 +1,9 @@
+.entries-per-page {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.entries-per-page p {
+  margin: 0 1rem;
+}
