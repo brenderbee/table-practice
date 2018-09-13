@@ -16,6 +16,7 @@ class Table extends Component {
       masterColumns: columns
     };
     this.parseData = this.parseData.bind(this);
+    this.handleSort = this.handleSort.bind(this);
   }
 
   parseData(columns, rows) {
@@ -30,11 +31,16 @@ class Table extends Component {
     return rowObjects;
   }
 
+  handleSort(header) {
+    console.log('sort is triggered');
+  }
+
   render() {
     return (
       <div className="table">
         <TableHeader
           columnList={this.state.masterColumns}
+          onClickSort={this.handleSort}
         />
         <RowList
           rowList={this.state.masterRows}
