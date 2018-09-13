@@ -12,14 +12,17 @@ class Table extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterRows: rows
+      masterRows: rows,
+      masterColumns: columns
     };
   }
 
   render() {
     return (
       <div className="table">
-        <TableHeader />
+        <TableHeader
+          columnList={this.state.masterColumns}
+        />
         <RowList
           rowList={this.state.masterRows}
         />
