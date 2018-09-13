@@ -81,4 +81,4 @@ const jsonResponse = {
   ]
 };
 
-export jsonResponse;
+export { jsonResponse };
