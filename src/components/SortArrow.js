@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class SortArrow extends Component {
-  render() {
-    return (
-      <div>
-        <p>arrow</p>
-      </div>
-    );
-  }
+function SortArrow() {
+  return (
+    <div>
+      <p>arrow</p>
+    </div>
+  );
 }
 
 export default SortArrow;
