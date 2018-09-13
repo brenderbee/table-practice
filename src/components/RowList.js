@@ -5,10 +5,11 @@ import PropTypes from 'prop-types';
 function RowList(props) {
   return (
     <div>
-      {props.rowList.map((rowData, index) =>
+      {props.rowList.map((rowObject, index) =>
         <Row
           key={index}
-          rowData={rowData}
+          rowObject={rowObject}
+          columnList={props.columnList}
         />
       )}
     </div>
@@ -16,7 +17,8 @@ function RowList(props) {
 }
 
 RowList.propTypes = {
-  rowList: PropTypes.array
+  rowList: PropTypes.array,
+  columnList: PropTypes.array
 };
 
 export default RowList;

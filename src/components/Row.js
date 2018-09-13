@@ -6,18 +6,19 @@ import PropTypes from 'prop-types';
 function Row(props) {
   return (
     <div className="row">
-      {props.rowData.map((cell, index) =>
+      {props.columnList.map((header, index) =>
         <RowCell
           key={index}
-          cell={cell}
-          />
+          cell={props.rowObject[header]}
+        />
       )}
     </div>
   );
 }
 
 Row.propTypes = {
-  rowData: PropTypes.array
+  rowObject: PropTypes.object,
+  columnList: PropTypes.array
 };
 
 export default Row;
