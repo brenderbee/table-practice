@@ -32,7 +32,13 @@ class Table extends Component {
   }
 
   handleSort(header) {
-    console.log('sort is triggered', header);
+    let newMasterRows = this.state.masterRows.slice();
+      newMasterRows.sort((a, b) => a[header].trim() - b[header].trim());
+    this.setState({masterRows: newMasterRows});
+  }
+
+  componentDidUpdate() {
+    console.log(this.state.masterRows);
   }
 
   render() {
