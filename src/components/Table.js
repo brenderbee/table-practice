@@ -76,8 +76,8 @@ class Table extends Component {
     this.setState({entries});
   }
 
-  handleCurrentPageChange() {
-    console.lot("current page: " , this.state.currentPage);
+  handleCurrentPageChange(page) {
+    console.lot("current page: " , page);
   }
 
   componentDidUpdate() {
@@ -100,7 +100,7 @@ class Table extends Component {
         <TableFooter
           onChangeEntries={this.handleChangeEntries}
           currentPage={this.state.currentPage}
-          onChangeCurrentPage={this.handleChangeEntries}
+          onChangeCurrentPage={this.handleCurrentPageChange}
         />
       </div>
     );
