@@ -9,3 +9,7 @@
 .row:last-child {
   border-bottom: none;
 }
+
+.row:hover {
+  background-color: rgba(110, 254, 214, 0.5);
+}
