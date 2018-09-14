@@ -1,6 +1,7 @@
 .entries-nav {
   align-items: center;
-  border: 1px solid black;
+  border: 1px solid #b7b7b7;
+  border-radius: 2px;
   display: flex;
   justify-content: flex-start;
 }
