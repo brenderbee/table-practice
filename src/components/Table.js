@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { jsonResponse } from './../fakeData';
 import TableHeader from './TableHeader';
 import RowList from './RowList';
-import TableFooter from './TableFooter';
+import TableNav from './TableNav';
 import { orderBy } from 'lodash';
 import './../assets/css/Table.css';
 
@@ -98,6 +98,12 @@ class Table extends Component {
   render() {
     return (
       <div className="table">
+        <TableNav
+          onChangeEntries={this.handleChangeEntries}
+          currentPage={this.state.currentPage}
+          onChangeCurrentPage={this.handleCurrentPageChange}
+          pages={this.state.pages}
+          />
         <div className="table-body">
           <TableHeader
             columnList={this.state.masterColumns}
@@ -110,12 +116,6 @@ class Table extends Component {
             columnList={this.state.masterColumns}
             />
         </div>
-        <TableFooter
-          onChangeEntries={this.handleChangeEntries}
-          currentPage={this.state.currentPage}
-          onChangeCurrentPage={this.handleCurrentPageChange}
-          pages={this.state.pages}
-        />
       </div>
     );
   }

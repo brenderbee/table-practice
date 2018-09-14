@@ -4,7 +4,7 @@ import EntriesNav from './EntriesNav';
 import './../assets/css/TableFooter.css';
 import PropTypes from 'prop-types';
 
-function TableFooter(props) {
+function TableNav(props) {
   return (
     <div className="table-footer">
       <EntriesPerPage
@@ -18,10 +18,10 @@ function TableFooter(props) {
   );
 }
 
-TableFooter.propTypes = {
+TableNav.propTypes = {
   onChangeEntries: PropTypes.func,
   onChangeCurrentPage: PropTypes.func,
   pages: PropTypes.number
 };
 
-export default TableFooter;
+export default TableNav;
