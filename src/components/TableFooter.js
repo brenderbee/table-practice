@@ -10,13 +10,16 @@ function TableFooter(props) {
       <EntriesPerPage
         onChangeEntries={props.onChangeEntries}
       />
-      <EntriesNav />
+      <EntriesNav
+        onChangeCurrentPage={props.onChangeCurrentPage}
+      />
     </div>
   );
 }
 
 TableFooter.propTypes = {
-  onChangeEntries: PropTypes.func
+  onChangeEntries: PropTypes.func,
+  onChangeCurrentPage: PropTypes.func
 };
 
 export default TableFooter;
