@@ -3,6 +3,7 @@ import { jsonResponse } from './../fakeData';
 import TableHeader from './TableHeader';
 import RowList from './RowList';
 import TableFooter from './TableFooter';
+import { orderBy } from 'lodash';
 import './../assets/css/Table.css';
 
 const rows = jsonResponse.data;
@@ -32,9 +33,9 @@ class Table extends Component {
   }
 
   handleSort(header) {
-    let newMasterRows = this.state.masterRows.slice();
-      newMasterRows.sort((a, b) => a[header].trim() - b[header].trim());
-    this.setState({masterRows: newMasterRows});
+    let masterRows = this.state.masterRows.slice();
+    masterRows = orderBy(masterRows, header, 'desc');
+    this.setState({masterRows});
   }
 
   componentDidUpdate() {
