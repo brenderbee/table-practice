@@ -11,6 +11,7 @@ function EntriesNav(props) {
         onChangeCurrentPage={props.onChangeCurrentPage}
         singlePage={i + 1}
         key={i}
+        currentPage={props.currentPage}
       />
     );
   }
@@ -23,7 +24,8 @@ function EntriesNav(props) {
 
 EntriesNav.propTypes = {
   onChangeCurrentPage: PropTypes.func,
-  pages: PropTypes.number
+  pages: PropTypes.number,
+  currentPage: PropTypes.number
 };
 
 export default EntriesNav;

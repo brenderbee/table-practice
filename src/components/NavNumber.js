@@ -20,7 +20,8 @@ function NavNumber(props) {
 
 NavNumber.propTypes = {
   onChangeCurrentPage: PropTypes.func,
-  singlePage: PropTypes.number
+  singlePage: PropTypes.number,
+  currentPage: PropTypes.number
 };
 
 export default NavNumber;
