@@ -7,10 +7,10 @@ import PropTypes from 'prop-types';
 
 function SortArrow(props) {
 
-  function renderSortArrow(state) {
-    if (state === null) {
+  function renderSortArrow(order, header, active) {
+    if (order === null || header !== active) {
       return <img src={doubleArrow} height="15" alt="Double sort arrow"/>;
-    } else if (state === 'asc') {
+    } else if (order === 'asc') {
       return <img src={ascArrow} height="15" alt="Ascending sort arrow"/>;
     } else {
       return <img src={descArrow} height="15" alt="Descending sort arrow"/>;
@@ -19,13 +19,15 @@ function SortArrow(props) {
 
   return (
     <div className="sort-arrow">
-      {renderSortArrow(props.sortOrder)}
+      {renderSortArrow(props.sortOrder, props.header, props.activeSort)}
     </div>
   );
 }
 
 SortArrow.propTypes = {
-  sortOrder: PropTypes.string
+  sortOrder: PropTypes.string,
+  header: PropTypes.string,
+  activeSort: PropTypes.string
 };
 
 
