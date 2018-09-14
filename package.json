@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "eslint": "^5.0.1",
+    "eslint-plugin-react": "^7.10.0",
     "normalize.css": "^8.0.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
@@ -12,6 +14,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/index.js src/**/**; exit 0",
+    "lint-fix": "eslint src/index.jsx src/**/** --fix; exit 0"
+  },
+  "devDependencies": {
+    "eslint-loader": "^2.0.0"
   }
 }
