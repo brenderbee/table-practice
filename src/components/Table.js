@@ -56,6 +56,7 @@ class Table extends Component {
         <TableHeader
           columnList={this.state.masterColumns}
           onClickSort={this.handleSort}
+          sortOrder={this.state.masterSortOrder}
         />
         <RowList
           rowList={this.state.masterRows}

@@ -12,14 +12,17 @@ function ColumnHeader(props) {
   return (
     <div onClick={() => handleSendColumnHeader(props.header)} className="column-header">
       <h2>{props.header}</h2>
-      <SortArrow />
+      <SortArrow
+        sortOrder={props.sortOrder}
+      />
     </div>
   );
 }
 
 ColumnHeader.propTypes = {
   header: PropTypes.string,
-  onClickSort: PropTypes.func
+  onClickSort: PropTypes.func,
+  sortOrder: PropTypes.string
 };
 
 export default ColumnHeader;
