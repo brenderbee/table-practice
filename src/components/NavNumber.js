@@ -1,9 +1,10 @@
 import React from 'react';
+import './../assets/css/NavNumber.css';
 
 function NavNumber() {
   return (
-    <div>
-      <p>1</p>
+    <div className="nav-number">
+      1
     </div>
   );
 }

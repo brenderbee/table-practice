@@ -1,0 +1,12 @@
+.nav-number {
+  align-items: center;
+  border: 1px solid red;
+  display: flex;
+  height: 3rem;
+  justify-content: center;
+  width: 3rem;
+}
+
+.nav-number:hover {
+  cursor: pointer;
+}
