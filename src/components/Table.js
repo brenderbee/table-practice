@@ -16,7 +16,8 @@ class Table extends Component {
       masterRows: this.parseData(columns, rows),
       masterColumns: columns,
       masterSortOrder: null,
-      activeSort: null
+      activeSort: null,
+      entries: null,
     };
     this.parseData = this.parseData.bind(this);
     this.handleSortOrder = this.handleSortOrder.bind(this);
@@ -59,7 +60,7 @@ class Table extends Component {
   }
 
   handleChangeEntries(entries){
-    console.log(entries);
+    this.setState({entries});
   }
 
   render() {
