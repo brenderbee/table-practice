@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function EntriesPerPage(props) {
 
   function handleSendEntries(event) {
-    props.onChangeEntries(event.target.value);
+    props.onChangeEntries(parseInt(event.target.value, 10));
   }
 
   return (
