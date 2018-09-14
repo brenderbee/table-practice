@@ -15,11 +15,13 @@ class Table extends Component {
     this.state = {
       masterRows: this.parseData(columns, rows),
       masterColumns: columns,
-      masterSortOrder: null
+      masterSortOrder: null,
+      activeSort: null
     };
     this.parseData = this.parseData.bind(this);
     this.handleSortOrder = this.handleSortOrder.bind(this);
     this.handleSort = this.handleSort.bind(this);
+    this.handleActiveSort = this.handleActiveSort.bind(this);
   }
 
   parseData(columns, rows) {
@@ -44,9 +46,14 @@ class Table extends Component {
     }
   }
 
+  handleActiveSort(string) {
+    this.setState({activeSort: string});
+  }
+
   handleSort(header) {
     let masterRows = this.state.masterRows.slice();
     masterRows = orderBy(masterRows, header, this.handleSortOrder());
+    this.handleActiveSort(header);
     this.setState({masterRows});
   }
 
@@ -57,6 +64,7 @@ class Table extends Component {
           columnList={this.state.masterColumns}
           onClickSort={this.handleSort}
           sortOrder={this.state.masterSortOrder}
+          activeSort={this.state.activeSort}
         />
         <RowList
           rowList={this.state.masterRows}
