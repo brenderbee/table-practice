@@ -3,11 +3,19 @@ import NavNumber from './NavNumber';
 import PropTypes from 'prop-types';
 
 function EntriesNav(props) {
-  return (
-    <div>
+  let repeatingNums = [];
+  for (let i = 0; i < props.pages; i++) {
+    repeatingNums.push(
       <NavNumber
         onChangeCurrentPage={props.onChangeCurrentPage}
+        singlePage={i + 1}
+        key={i}
       />
+    );
+  }
+  return (
+    <div>
+      {repeatingNums}
     </div>
   );
 }
