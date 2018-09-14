@@ -12,7 +12,7 @@ function EntriesPerPage(props) {
     <div className="entries-per-page">
       <p>entries per page</p>
       <select onChange={handleSendEntries}>
-        <option value="All">All</option>
+        <option value="1">All</option>
         <option value="5">5</option>
         <option value="10">10</option>
       </select>
