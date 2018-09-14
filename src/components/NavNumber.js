@@ -11,15 +11,16 @@ function NavNumber(props) {
   return (
     <div
       className="nav-number"
-      onClick={() => handleSendNewPage(1)}
+      onClick={() => handleSendNewPage(props.singlePage)}
     >
-      1
+      {props.singlePage}
     </div>
   );
 }
 
 NavNumber.propTypes = {
-  onChangeCurrentPage: PropTypes.func
+  onChangeCurrentPage: PropTypes.func,
+  singlePage: PropTypes.number
 };
 
 export default NavNumber;
