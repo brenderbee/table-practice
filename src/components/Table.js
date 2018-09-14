@@ -91,10 +91,6 @@ class Table extends Component {
     this.setState({currentPage: newPage});
   }
 
-  componentDidUpdate() {
-    console.log(this.state.masterRows);
-  }
-
   render() {
     return (
       <div className="table">
