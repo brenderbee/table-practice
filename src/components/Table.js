@@ -18,7 +18,8 @@ class Table extends Component {
       masterSortOrder: null,
       activeSort: null,
       entries: 1,
-      masterPaginatedRows: this.parseData(columns, rows)
+      masterPaginatedRows: this.parseData(columns, rows),
+      currentPage: 1
     };
     this.parseData = this.parseData.bind(this);
     this.handleSortOrder = this.handleSortOrder.bind(this);
@@ -26,6 +27,7 @@ class Table extends Component {
     this.handleActiveSort = this.handleActiveSort.bind(this);
     this.handleChangeEntries = this.handleChangeEntries.bind(this);
     this.getPaginatedRows = this.getPaginatedRows.bind(this);
+    this.handleChangeEntries = this.handleChangeEntries.bind(this);
   }
 
   parseData(columns, rows) {
@@ -74,6 +76,10 @@ class Table extends Component {
     this.setState({entries});
   }
 
+  handleCurrentPageChange() {
+    console.lot("current page: " , this.state.currentPage);
+  }
+
   componentDidUpdate() {
     console.log(this.state.masterPaginatedRows);
   }
@@ -93,6 +99,8 @@ class Table extends Component {
         />
         <TableFooter
           onChangeEntries={this.handleChangeEntries}
+          currentPage={this.state.currentPage}
+          onChangeCurrentPage={this.handleChangeEntries}
         />
       </div>
     );
