@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 function ColumnHeader(props) {
 
   function handleSendColumnHeader(header) {
+    console.log("handleSendColumnHeader: call handleSort()");
     props.onClickSort(header);
   }
 

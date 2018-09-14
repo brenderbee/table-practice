@@ -45,6 +45,7 @@ class Table extends Component {
   }
 
   getPaginatedRows(entries, page) {
+    console.log("getPaginatedRows CALLED");
     const beginIndex = entries * (page - 1),
           endIndex = entries * page;
     let pages = Math.ceil(this.state.masterRows.length / entries),
@@ -54,29 +55,41 @@ class Table extends Component {
       pages = 1;
     }
     this.setState({currentPage: 1});
+    console.log("getPaginatedRows: set current page");
     this.setState({pages});
+    console.log("getPaginatedRows: set number of pages");
     this.setState({masterPaginatedRows: paginatedRows});
+    console.log("getPaginatedRows: set masterPaginatedRows");
   }
 
   handleSortOrder() {
+    console.log("handleSortOrder CALLED");
     if (this.state.masterSortOrder === null || this.state.masterSortOrder === 'desc') {
       this.setState({masterSortOrder: 'asc'});
+      console.log("handleSortOrder: set masterSortOrder to asc");
       return 'asc';
     } else {
       this.setState({masterSortOrder: 'desc'});
+      console.log("handleSortOrder: set masterSortOrder to desc");
       return 'desc';
     }
   }
 
   handleActiveSort(string) {
+    console.log("handleActiveSort CALLED");
     this.setState({activeSort: string});
+    console.log("handleActiveSort: set activeSort");
   }
 
   handleSort(header) {
+    console.log("handleSort CALLED");
     let masterRows = this.state.masterRows.slice();
     masterRows = orderBy(masterRows, header, this.handleSortOrder());
+    console.log("handleSort: call handleActiveSort()");
     this.handleActiveSort(header);
     this.setState({masterRows});
+    console.log("handleSort: masterRows set to sorted masterRows");
+    console.log("handleSort: call getPaginatedRows()");
     this.getPaginatedRows(this.state.entries, this.state.currentPage);
   }
 
@@ -99,18 +112,18 @@ class Table extends Component {
           currentPage={this.state.currentPage}
           onChangeCurrentPage={this.handleCurrentPageChange}
           pages={this.state.pages}
-          />
+        />
         <div className="table-body">
           <TableHeader
             columnList={this.state.masterColumns}
             onClickSort={this.handleSort}
             sortOrder={this.state.masterSortOrder}
             activeSort={this.state.activeSort}
-            />
+          />
           <RowList
             rowList={this.state.masterPaginatedRows}
             columnList={this.state.masterColumns}
-            />
+          />
         </div>
       </div>
     );
