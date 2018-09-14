@@ -12,6 +12,7 @@ function TableHeader(props) {
           header={header}
           onClickSort={props.onClickSort}
           sortOrder={props.sortOrder}
+          activeSort={props.activeSort}
         />
       )}
     </div>
@@ -21,7 +22,8 @@ function TableHeader(props) {
 TableHeader.propTypes = {
   columnList: PropTypes.array,
   onClickSort: PropTypes.func,
-  sortOrder: PropTypes.string
+  sortOrder: PropTypes.string,
+  activeSort: PropTypes.string
 };
 
 export default TableHeader;

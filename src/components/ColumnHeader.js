@@ -15,6 +15,7 @@ function ColumnHeader(props) {
       <SortArrow
         sortOrder={props.sortOrder}
         header={props.header}
+        activeSort={props.activeSort}
       />
     </div>
   );
@@ -23,7 +24,8 @@ function ColumnHeader(props) {
 ColumnHeader.propTypes = {
   header: PropTypes.string,
   onClickSort: PropTypes.func,
-  sortOrder: PropTypes.string
+  sortOrder: PropTypes.string,
+  activeSort: PropTypes.string
 };
 
 export default ColumnHeader;
