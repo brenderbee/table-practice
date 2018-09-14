@@ -98,16 +98,18 @@ class Table extends Component {
   render() {
     return (
       <div className="table">
-        <TableHeader
-          columnList={this.state.masterColumns}
-          onClickSort={this.handleSort}
-          sortOrder={this.state.masterSortOrder}
-          activeSort={this.state.activeSort}
-        />
-        <RowList
-          rowList={this.state.masterPaginatedRows}
-          columnList={this.state.masterColumns}
-        />
+        <div className="table-body">
+          <TableHeader
+            columnList={this.state.masterColumns}
+            onClickSort={this.handleSort}
+            sortOrder={this.state.masterSortOrder}
+            activeSort={this.state.activeSort}
+            />
+          <RowList
+            rowList={this.state.masterPaginatedRows}
+            columnList={this.state.masterColumns}
+            />
+        </div>
         <TableFooter
           onChangeEntries={this.handleChangeEntries}
           currentPage={this.state.currentPage}

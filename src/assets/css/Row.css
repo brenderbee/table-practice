@@ -1,6 +1,11 @@
 .row {
-  border-bottom: 1px solid black;
+  background-color: #fafffd;
+  border-bottom: 1px solid #b7b7b7;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.row:last-child {
+  border-bottom: none;
 }

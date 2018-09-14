@@ -1,5 +1,10 @@
 .table {
-  border: 1px solid black;
   margin: 0 auto;
   width: 80%;
+}
+
+.table-body {
+  border: 1px solid #b7b7b7;
+  border-radius: 2px;
+  margin-bottom: 0.5rem;
 }

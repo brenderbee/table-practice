@@ -1,6 +1,8 @@
 .table-header {
-  border-bottom: 1px solid black;
+  align-items: center;
+  background-color: #6DD5FA;
+  border-bottom: 1px solid #b7b7b7;
+  font-size: 1rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
