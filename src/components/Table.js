@@ -81,6 +81,7 @@ class Table extends Component {
   }
 
   handleCurrentPageChange(newPage) {
+    this.getPaginatedRows(this.state.entries, newPage);
     this.setState({currentPage: newPage});
   }
 
