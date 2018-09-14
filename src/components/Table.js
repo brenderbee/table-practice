@@ -53,6 +53,7 @@ class Table extends Component {
       paginatedRows = this.state.masterRows.slice();
       pages = 1;
     }
+    this.setState({currentPage: 1});
     this.setState({pages});
     this.setState({masterPaginatedRows: paginatedRows});
   }
