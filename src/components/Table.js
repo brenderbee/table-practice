@@ -17,13 +17,14 @@ class Table extends Component {
       masterColumns: columns,
       masterSortOrder: null,
       activeSort: null,
-      entries: null,
+      entries: 1,
     };
     this.parseData = this.parseData.bind(this);
     this.handleSortOrder = this.handleSortOrder.bind(this);
     this.handleSort = this.handleSort.bind(this);
     this.handleActiveSort = this.handleActiveSort.bind(this);
     this.handleChangeEntries = this.handleChangeEntries.bind(this);
+    this.getPaginatedRows = this.getPaginatedRows.bind(this);
   }
 
   parseData(columns, rows) {
@@ -61,6 +62,15 @@ class Table extends Component {
 
   handleChangeEntries(entries){
     this.setState({entries});
+  }
+
+  getPaginatedRows(entries, page) {
+    const pages = Math.ceil(this.state.masterRows.length / entries);
+    console.log(pages);
+  }
+
+  componentDidUpdate() {
+    this.getPaginatedRows(this.state.entries, 5);
   }
 
   render() {
