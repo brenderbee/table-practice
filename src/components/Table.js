@@ -58,8 +58,8 @@ class Table extends Component {
     this.setState({masterRows});
   }
 
-  handleChangeEntries(){
-    console.log("handleChangeEntries");
+  handleChangeEntries(entries){
+    console.log(entries);
   }
 
   render() {
