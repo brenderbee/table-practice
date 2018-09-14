@@ -76,6 +76,7 @@ class Table extends Component {
 
   handleChangeEntries(entries) {
     this.getPaginatedRows(entries, 1);
+    this.setState({currentPage: 1});
     this.setState({entries});
   }
 
@@ -97,7 +98,7 @@ class Table extends Component {
           activeSort={this.state.activeSort}
         />
         <RowList
-          rowList={this.state.masterRows}
+          rowList={this.state.masterPaginatedRows}
           columnList={this.state.masterColumns}
         />
         <TableFooter
