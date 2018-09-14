@@ -18,6 +18,7 @@ class Table extends Component {
       masterSortOrder: null,
       activeSort: null,
       entries: 1,
+      masterPaginatedRows: this.parseData(columns, rows)
     };
     this.parseData = this.parseData.bind(this);
     this.handleSortOrder = this.handleSortOrder.bind(this);
@@ -37,6 +38,14 @@ class Table extends Component {
       rowObjects.push(row);
     }
     return rowObjects;
+  }
+
+  getPaginatedRows(entries, page) {
+    const pages = Math.ceil(this.state.masterRows.length / entries),
+          beginIndex = entries * (page - 1),
+          endIndex = entries * page,
+          paginatedRows = this.state.masterRows.slice(beginIndex, endIndex);
+    this.setState({masterPaginatedRows: paginatedRows});
   }
 
   handleSortOrder() {
@@ -60,20 +69,13 @@ class Table extends Component {
     this.setState({masterRows});
   }
 
-  handleChangeEntries(entries){
+  handleChangeEntries(entries) {
+    this.getPaginatedRows(entries, 1)
     this.setState({entries});
   }
 
-  getPaginatedRows(entries, page) {
-    const pages = Math.ceil(this.state.masterRows.length / entries),
-          beginIndex = entries * (page - 1),
-          endIndex = entries * page - 1;
-    console.log("begin index: " , beginIndex);
-    console.log("end index: " , endIndex);
-  }
-
   componentDidUpdate() {
-    this.getPaginatedRows(this.state.entries, 1);
+    console.log(this.state.masterPaginatedRows);
   }
 
   render() {
