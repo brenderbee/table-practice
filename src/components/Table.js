@@ -72,6 +72,8 @@ class Table extends Component {
     masterRows = orderBy(masterRows, header, this.handleSortOrder());
     this.handleActiveSort(header);
     this.setState({masterRows});
+    this.getPaginatedRows(this.state.entries, this.state.currentPage);
+    console.log("sort");
   }
 
   handleChangeEntries(entries) {
@@ -86,7 +88,7 @@ class Table extends Component {
   }
 
   componentDidUpdate() {
-    console.log(this.state.masterPaginatedRows);
+    console.log(this.state.masterRows);
   }
 
   render() {
