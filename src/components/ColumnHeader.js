@@ -14,6 +14,7 @@ function ColumnHeader(props) {
       <h2>{props.header}</h2>
       <SortArrow
         sortOrder={props.sortOrder}
+        header={props.header}
       />
     </div>
   );
