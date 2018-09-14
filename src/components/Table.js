@@ -29,6 +29,7 @@ class Table extends Component {
     this.handleChangeEntries = this.handleChangeEntries.bind(this);
     this.getPaginatedRows = this.getPaginatedRows.bind(this);
     this.handleChangeEntries = this.handleChangeEntries.bind(this);
+    this.handleCurrentPageChange = this.handleCurrentPageChange.bind(this);
   }
 
   parseData(columns, rows) {
@@ -74,12 +75,12 @@ class Table extends Component {
   }
 
   handleChangeEntries(entries) {
-    this.getPaginatedRows(entries, 1)
+    this.getPaginatedRows(entries, 1);
     this.setState({entries});
   }
 
-  handleCurrentPageChange(page) {
-    console.log("current page: " , page);
+  handleCurrentPageChange(newPage) {
+    this.setState({currentPage: newPage});
   }
 
   componentDidUpdate() {
