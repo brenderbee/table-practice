@@ -22,6 +22,7 @@ class Table extends Component {
     this.handleSortOrder = this.handleSortOrder.bind(this);
     this.handleSort = this.handleSort.bind(this);
     this.handleActiveSort = this.handleActiveSort.bind(this);
+    this.handleChangeEntries = this.handleChangeEntries.bind(this);
   }
 
   parseData(columns, rows) {
@@ -57,6 +58,10 @@ class Table extends Component {
     this.setState({masterRows});
   }
 
+  handleChangeEntries(){
+    console.log("handleChangeEntries");
+  }
+
   render() {
     return (
       <div className="table">
@@ -70,7 +75,9 @@ class Table extends Component {
           rowList={this.state.masterRows}
           columnList={this.state.masterColumns}
         />
-        <TableFooter />
+        <TableFooter
+          onChangeEntries={this.handleChangeEntries}
+        />
       </div>
     );
   }
