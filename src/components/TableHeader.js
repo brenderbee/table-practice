@@ -1,6 +1,7 @@
 import React from 'react';
 import ColumnHeader from './ColumnHeader';
 import './../assets/css/TableHeader.css';
+import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 function TableHeader(props) {
@@ -8,7 +9,7 @@ function TableHeader(props) {
     <div className="table-header">
       {props.columnList.map((header, index) =>
         <ColumnHeader
-          key={index}
+          key={v4()}
           header={header}
           onClickSort={props.onClickSort}
           sortOrder={props.sortOrder}

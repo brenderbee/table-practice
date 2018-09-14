@@ -1,6 +1,7 @@
 import React from 'react';
 import NavNumber from './NavNumber';
 import './../assets/css/EntriesNav.css';
+import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 function EntriesNav(props) {
@@ -10,7 +11,7 @@ function EntriesNav(props) {
       <NavNumber
         onChangeCurrentPage={props.onChangeCurrentPage}
         singlePage={i + 1}
-        key={i}
+        key={v4()}
         currentPage={props.currentPage}
       />
     );

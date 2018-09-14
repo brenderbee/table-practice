@@ -1,6 +1,7 @@
 import React from 'react';
 import RowCell from './RowCell';
 import './../assets/css/Row.css';
+import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 function Row(props) {
@@ -8,7 +9,7 @@ function Row(props) {
     <div className="row">
       {props.columnList.map((header, index) =>
         <RowCell
-          key={index}
+          key={v4()}
           cell={props.rowObject[header]}
         />
       )}

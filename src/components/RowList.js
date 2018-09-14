@@ -1,5 +1,6 @@
 import React from 'react';
 import Row from './Row';
+import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
 
 function RowList(props) {
@@ -7,7 +8,7 @@ function RowList(props) {
     <div>
       {props.rowList.map((rowObject, index) =>
         <Row
-          key={index}
+          key={v4()}
           rowObject={rowObject}
           columnList={props.columnList}
         />
