@@ -14,9 +14,11 @@ class Table extends Component {
     super(props);
     this.state = {
       masterRows: this.parseData(columns, rows),
-      masterColumns: columns
+      masterColumns: columns,
+      masterSortOrder: null
     };
     this.parseData = this.parseData.bind(this);
+    this.handleSortOrder = this.handleSortOrder.bind(this);
     this.handleSort = this.handleSort.bind(this);
   }
 
@@ -32,9 +34,19 @@ class Table extends Component {
     return rowObjects;
   }
 
+  handleSortOrder() {
+    if (this.state.masterSortOrder === null || this.state.masterSortOrder === 'desc') {
+      this.setState({masterSortOrder: 'asc'});
+      return 'asc';
+    } else {
+      this.setState({masterSortOrder: 'desc'});
+      return 'desc';
+    }
+  }
+
   handleSort(header) {
     let masterRows = this.state.masterRows.slice();
-    masterRows = orderBy(masterRows, header, 'desc');
+    masterRows = orderBy(masterRows, header, this.handleSortOrder());
     this.setState({masterRows});
   }
 
