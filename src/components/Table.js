@@ -50,10 +50,6 @@ class Table extends Component {
     this.setState({masterRows});
   }
 
-  componentDidUpdate() {
-    console.log(this.state.masterRows);
-  }
-
   render() {
     return (
       <div className="table">
