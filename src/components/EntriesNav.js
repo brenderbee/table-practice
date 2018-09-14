@@ -1,5 +1,6 @@
 import React from 'react';
 import NavNumber from './NavNumber';
+import './../assets/css/EntriesNav.css';
 import PropTypes from 'prop-types';
 
 function EntriesNav(props) {
@@ -14,7 +15,7 @@ function EntriesNav(props) {
     );
   }
   return (
-    <div>
+    <div className="entries-nav">
       {repeatingNums}
     </div>
   );
