@@ -65,12 +65,15 @@ class Table extends Component {
   }
 
   getPaginatedRows(entries, page) {
-    const pages = Math.ceil(this.state.masterRows.length / entries);
-    console.log(pages);
+    const pages = Math.ceil(this.state.masterRows.length / entries),
+          beginIndex = entries * (page - 1),
+          endIndex = entries * page - 1;
+    console.log("begin index: " , beginIndex);
+    console.log("end index: " , endIndex);
   }
 
   componentDidUpdate() {
-    this.getPaginatedRows(this.state.entries, 5);
+    this.getPaginatedRows(this.state.entries, 1);
   }
 
   render() {
