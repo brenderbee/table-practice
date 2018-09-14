@@ -13,7 +13,8 @@ function EntriesNav(props) {
 }
 
 EntriesNav.propTypes = {
-  onChangeCurrentPage: PropTypes.func
+  onChangeCurrentPage: PropTypes.func,
+  pages: PropTypes.number
 };
 
 export default EntriesNav;
