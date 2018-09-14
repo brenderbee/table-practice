@@ -6,9 +6,12 @@
 
 ## Description
 
-_This webpage application is designed to be a table component._
+_This webpage application is designed to be a table component. Table takes a JSON blob of the form: {"columns": ["col1", "col2", "col3",...], "data": [["value1", "value2", "value3"], ...]}, displays columns and rows in a paginated table, allows the user to select max rows to display, and sorts by column._
 
 _This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). All dependencies required are included in this project._
+
+Screenshot: <br>
+<img src="https://raw.githubusercontent.com/brenderbee/table-practice/master/src/assets/img/screenShot.png" width="800" />
 
 Layout: <br>
 <img src="https://raw.githubusercontent.com/brenderbee/table-practice/master/src/assets/img/planning/layout.JPG" width="800" />
@@ -54,7 +57,7 @@ Planned Components: <br>
 
 
 ## Known Bugs
-* This app does not have known bugs at this time.
+* When a user is on the last page of entries and executes a sort, the display should change back to a view of the first page with the sort applied. This does not happen and results in an odd user experience.
 
 ## Contact
 _Do not contact anyone with questions or comments regarding this project._
@@ -73,7 +76,8 @@ _Developer Dependencies_
 * As a user, I want to be able to skip to the beginning or end of the list of items.
 
 ### Notes
-* Add a notes section where you document unforeseen issues and questions during your development process. Commit these notes by themselves.
+* Ran into issues with the async nature of setState. Remember to use async / await or promises.
+* Spent a lot of time trying to build custom sort method. Use industry standard lodash instead.
 
 
 
