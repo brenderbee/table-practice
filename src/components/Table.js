@@ -45,10 +45,14 @@ class Table extends Component {
   }
 
   getPaginatedRows(entries, page) {
-    const pages = Math.ceil(this.state.masterRows.length / entries),
-          beginIndex = entries * (page - 1),
-          endIndex = entries * page,
-          paginatedRows = this.state.masterRows.slice(beginIndex, endIndex);
+    const beginIndex = entries * (page - 1),
+          endIndex = entries * page;
+    let pages = Math.ceil(this.state.masterRows.length / entries),
+        paginatedRows = this.state.masterRows.slice(beginIndex, endIndex);
+    if ( entries === 1) {
+      paginatedRows = this.state.masterRows.slice();
+      pages = 1;
+    }
     this.setState({pages});
     this.setState({masterPaginatedRows: paginatedRows});
   }
@@ -73,7 +77,6 @@ class Table extends Component {
     this.handleActiveSort(header);
     this.setState({masterRows});
     this.getPaginatedRows(this.state.entries, this.state.currentPage);
-    console.log("sort");
   }
 
   handleChangeEntries(entries) {
