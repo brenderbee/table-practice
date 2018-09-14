@@ -1,7 +1,7 @@
 .nav-number {
   align-items: center;
   background: #fafffd;
-  border-right: 1px solid #b7b7b7;
+  border-right: 1px solid #00D59A;
   display: flex;
   font-size: 0.8rem;
   height: 2.5rem;
@@ -18,6 +18,8 @@
   cursor: pointer;
 }
 
-.nav-number-current {
+.nav-number.current {
   background-color: rgba(110, 254, 214, 1);
+  font-weight: bold;
+  border-radius: 2px;
 }

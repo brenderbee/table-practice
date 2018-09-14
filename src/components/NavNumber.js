@@ -8,9 +8,16 @@ function NavNumber(props) {
     props.onChangeCurrentPage(parseInt(number, 10))
   }
 
+  function renderNumber(activePage, thisPage) {
+    if (activePage === thisPage) {
+      return 'nav-number current';
+    }
+    return 'nav-number';
+  }
+
   return (
     <div
-      className="nav-number"
+      className={renderNumber(props.currentPage, props.singlePage)}
       onClick={() => handleSendNewPage(props.singlePage)}
     >
       {props.singlePage}
