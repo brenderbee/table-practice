@@ -8,6 +8,8 @@
 
 _This webpage application is designed to be a table component. Table takes a JSON blob of the form: {"columns": ["col1", "col2", "col3",...], "data": [["value1", "value2", "value3"], ...]}, displays columns and rows in a paginated table, allows the user to select max rows to display, and sorts by column._
 
+_View demo: https://brenderbee.github.io/table-practice/ _
+
 _This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). All dependencies required are included in this project._
 
 Screenshot: <br>
