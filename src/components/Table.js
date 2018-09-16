@@ -48,10 +48,12 @@ class Table extends Component {
     const beginIndex = entries * (page - 1),
           endIndex = entries * page;
     let pages = Math.ceil(this.state.masterRows.length / entries),
-        paginatedRows = this.state.masterRows.slice(beginIndex, endIndex);
+        paginatedRows = [];
     if ( entries === 1) {
       paginatedRows = this.state.masterRows.slice();
       pages = 1;
+    } else {
+      paginatedRows = this.state.masterRows.slice(beginIndex, endIndex);
     }
     this.setState({currentPage: 1});
     this.setState({pages});
@@ -78,7 +80,6 @@ class Table extends Component {
     this.handleActiveSort(header);
     let promise = new Promise((resolve, reject) => resolve(this.setState({masterRows})));
     promise.then(() => this.getPaginatedRows(this.state.entries, this.state.currentPage));
-
   }
 
   handleChangeEntries(entries) {
