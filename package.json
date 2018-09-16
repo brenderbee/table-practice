@@ -2,6 +2,7 @@
   "name": "table-hydrolix",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://brenderbee.github.io/table-practice/",
   "dependencies": {
     "eslint": "^5.0.1",
     "eslint-plugin-react": "^7.10.0",
@@ -16,9 +17,12 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint src/index.js src/**/**; exit 0",
-    "lint-fix": "eslint src/index.jsx src/**/** --fix; exit 0"
+    "lint-fix": "eslint src/index.jsx src/**/** --fix; exit 0",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
-    "eslint-loader": "^2.0.0"
+    "eslint-loader": "^2.0.0",
+    "gh-pages": "^1.2.0"
   }
 }
