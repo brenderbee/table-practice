@@ -79,7 +79,9 @@ class Table extends Component {
     masterRows = orderBy(masterRows, header, this.handleSortOrder());
     this.handleActiveSort(header);
     let promise = new Promise((resolve, reject) => resolve(this.setState({masterRows})));
-    promise.then(() => this.getPaginatedRows(this.state.entries, this.state.currentPage));
+    promise
+      .then(() => this.setState({currentPage: 1}))
+      .then(() => this.getPaginatedRows(this.state.entries, this.state.currentPage));
   }
 
   handleChangeEntries(entries) {
